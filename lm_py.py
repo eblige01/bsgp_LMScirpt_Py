@@ -12,8 +12,14 @@
 
 import pandas as pd
 import sys
-data = pd.read_csv('regrex1.csv')
 
+if len(sys.argv) > 1:
+    datafile = sys.argv[1]
+   
+else:
+    print("Please input a valid Filename")
+    sys.exit(-1)
+data = pd.read_csv(sys.argv[1])
 
 # ## Creating the scatterplot
 
@@ -27,7 +33,7 @@ plt.scatter(x,y)
 plt.xlabel('X')
 plt.ylabel('Y')           
 plt.show()
-
+plt.savefig("py_orig.png")
 
 # ## Model the data (linear model)
 
@@ -54,7 +60,7 @@ plt.plot(x,y_pred)
 plt.xlabel('X')
 plt.ylabel('Y')  
 plt.show()
-
+plt.savefig("py_lm.png")
 
 # In[ ]:
 
