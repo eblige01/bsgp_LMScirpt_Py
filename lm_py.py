@@ -11,6 +11,7 @@
 
 
 import pandas as pd
+import sys
 data = pd.read_csv('regrex1.csv')
 
 
